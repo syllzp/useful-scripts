@@ -1,0 +1,38 @@
+LAMMPS (2 Aug 2023 - Update 1)
+  using 1 OpenMP thread(s) per MPI task
+Loaded 1 plugins from /public/home/syllzp/software/dasp/anaconda3/envs/deepmd/lib/deepmd_lmp
+# bulk water
+
+units           metal
+boundary        p p p
+atom_style      atomic
+
+neighbor        2.0 bin
+neigh_modify    every 10 delay 0 check no
+
+read_data	2.data
+Reading data file ...
+  triclinic box = (0 0 0) to (41 41 41) with tilt (0 0 0)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  3070 atoms
+  read_data CPU = 0.007 seconds
+
+# See https://deepmd.rtfd.io/lammps/ for usage
+pair_style	deepmd frozen_model.pb
+Summary of lammps deepmd module ...
+  >>> Info of deepmd-kit:
+  installed to:       /public/home/syllzp/software/dasp/anaconda3/envs/deepmd
+  source:             v2.2.7
+  source branch:       HEAD
+  source commit:      839f4fe7
+  source commit at:   2023-10-27 21:10:24 +0800
+  surpport model ver.:1.1 
+  build variant:      cpu
+  build with tf inc:  /public/home/syllzp/software/dasp/anaconda3/envs/deepmd/include;/public/home/syllzp/software/dasp/anaconda3/envs/deepmd/include
+  build with tf lib:  /public/home/syllzp/software/dasp/anaconda3/envs/deepmd/lib/libtensorflow_cc.so
+  set tf intra_op_parallelism_threads: 0
+  set tf inter_op_parallelism_threads: 0
+  >>> Info of lammps module:
+  use deepmd-kit at:  /public/home/syllzp/software/dasp/anaconda3/envs/deepmdERROR on proc 0: DeePMD-kit C API Error: DeePMD-kit Error: TensorFlow Error: NOT_FOUND: frozen_model.pb; No such file or directory (/home/conda/feedstock_root/build_artifacts/libdeepmd_1698439047902/work/source/lmp/pair_deepmd.cpp:960)
+Last command: pair_style	deepmd frozen_model.pb

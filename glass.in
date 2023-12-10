@@ -1,0 +1,20 @@
+# A mixture of atoms
+tolerance 2.0
+filetype xyz
+output glass.xyz
+structure /public/home/syllzp/code/useful-scripts/data/Si.xyz
+    number 1000
+    inside box 0. 0. 0. 40. 40. 40.
+end structure
+structure /public/home/syllzp/code/useful-scripts/data/O.xyz
+    number 2050
+    inside box 0. 0. 0. 40. 40. 40.
+end structure
+structure /public/home/syllzp/code/useful-scripts/data/Ge.xyz
+    number 10
+    inside box 0. 0. 0. 40. 40. 40.
+end structure
+structure /public/home/syllzp/code/useful-scripts/data/Bi.xyz
+    number 10
+    inside box 0. 0. 0. 40. 40. 40.
+end structure
